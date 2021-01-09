@@ -33,7 +33,7 @@ jobs:
           TAGS="${DOCKER_IMAGE}:${VERSION//\//_}"
           echo ::set-output name=tags::${TAGS}
           echo ::set-output name=cache_from::${TAGS}
-          echo ::set-output name=cache_version::${VERSION//\//_}
+          echo ::set-output name=cache_version::${VERSION//\//-}
 
       - name: Setup Docker Buildx
         uses: docker/setup-buildx-action@v1
