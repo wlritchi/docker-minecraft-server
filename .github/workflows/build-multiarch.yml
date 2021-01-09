@@ -30,7 +30,7 @@ jobs:
               VERSION=latest
             fi
           fi
-          TAGS="${DOCKER_IMAGE}:${VERSION//\//_}"
+          TAGS="${DOCKER_IMAGE}:${VERSION//\//-}"
           echo ::set-output name=tags::${TAGS}
           echo ::set-output name=cache_from::${TAGS}
           echo ::set-output name=cache_version::${VERSION//\//-}
