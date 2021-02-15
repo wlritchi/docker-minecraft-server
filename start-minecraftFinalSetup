@@ -93,7 +93,7 @@ if isTrue ${ENABLE_JMX}; then
   -Dcom.sun.management.jmxremote.authenticate=false
   -Dcom.sun.management.jmxremote.ssl=false
   -Dcom.sun.management.jmxremote.host=${JMX_HOST}
-  -Djava.rmi.server.hostname=${JMX_HOST}"
+  -Djava.rmi.server.hostname=${JMX_SERVER_HOSTNAME:-${JMX_HOST}}"
 
   log "JMX is enabled. Make sure you have port forwarding for ${JMX_PORT}"
 fi
