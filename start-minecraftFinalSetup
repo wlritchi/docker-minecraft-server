@@ -84,16 +84,15 @@ if [ -n "$JVM_DD_OPTS" ]; then
 fi
 
 if isTrue ${ENABLE_JMX}; then
-  : ${JMX_HOST:=127.0.0.1}
   : ${JMX_PORT:=7091}
   JVM_OPTS="${JVM_OPTS}
-  -Dcom.sun.management.jmxremote
   -Dcom.sun.management.jmxremote.local.only=false
   -Dcom.sun.management.jmxremote.port=${JMX_PORT}
   -Dcom.sun.management.jmxremote.rmi.port=${JMX_PORT}
   -Dcom.sun.management.jmxremote.authenticate=false
   -Dcom.sun.management.jmxremote.ssl=false
-  -Djava.rmi.server.hostname=${JMX_HOST}"
+  -Dcom.sun.management.jmxremote.host=${JMX_BINDING:-0.0.0.0}
+  -Djava.rmi.server.hostname=${JMX_HOST:-localhost}"
 
   log "JMX is enabled. Make sure you have port forwarding for ${JMX_PORT}"
 fi
