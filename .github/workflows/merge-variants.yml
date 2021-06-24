@@ -15,3 +15,4 @@ jobs:
           git config --add user.name "${GITHUB_ACTOR:-Github Actions}"
           git config --add user.email "actions@github.com"
           ls -l
+          ls -l /bin/bash
