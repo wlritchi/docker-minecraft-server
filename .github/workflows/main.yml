@@ -81,7 +81,7 @@ jobs:
         # tags determined by prep step
         tags: ${{ steps.prep.outputs.tags }}
         cache-from: type=local,src=/tmp/.buildx-cache
-        cache-to: type=local,dest=/tmp/.buildx-cache
+        cache-to: type=local,dest=/tmp/.buildx-cache-new
         labels: |
           org.opencontainers.image.documentation=https://github.com/itzg/docker-minecraft-server
           org.opencontainers.image.version=${{ steps.prep.outputs.version }}
