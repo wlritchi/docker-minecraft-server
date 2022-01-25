@@ -11,6 +11,7 @@ env:
 
 jobs:
   discord:
+    if: github.repository == 'itzg/docker-minecraft-server'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
